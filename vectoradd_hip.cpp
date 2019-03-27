@@ -39,22 +39,20 @@ THE SOFTWARE.
 #define THREADS_PER_BLOCK_Y  1
 #define THREADS_PER_BLOCK_Z  1
 
-__global__ void 
+__global__ void
 vectoradd_float(hipLaunchParm lp,
-             float* __restrict__ a, const float* __restrict__ b, const float* __restrict__ c, int width, int height) 
+             float* __restrict__ a, const float* __restrict__ b, const float* __restrict__ c, int width, int height)
 
-  {
- 
-      int x = hipBlockDim_x * hipBlockIdx_x + hipThreadIdx_x;
+{
 
-      int i = y * width + x;
-      if ( i < (width * height)) {
-        a[i] = b[i] + c[i];
-      }
+    int x = hipBlockDim_x * hipBlockIdx_x + hipThreadIdx_x;
+    int y = hipBlockDim_y * hipBlockIdx_y + hipThreadIdx_y;
+    int i = y*width + x;
+    if ( i < (width * height)) {
+       a[i] = b[i] + c[i];
+    }
 
-
-
-  }
+}
 
 #if 0
 __kernel__ void vectoradd_float(float* a, const float* b, const float* c, int width, int height) {
