@@ -2,8 +2,8 @@
 #include<stdio.h>
 #include <hip/hip_runtime.h>
 #define BLOCK_SIZE 64
-/*
-__global__  void hip_normal()
+
+__global__  void hip_normal(hipLaunchParm lp)
 {
 
 }
@@ -16,9 +16,8 @@ int main(int argc, char *argv[])
 }
 
 
-*/
 
-
+/*
 template <typename T,typename X>
 __global__  void hip_kernel_multi(
 		T *A,
@@ -45,5 +44,5 @@ int main(int argc, char *argv[])
     hipLaunchKernelGGL(hip_kernel_multi<float,int>,BSZ,BLOCK_SIZE,0,0,temp,2,128);
 	
     return 0;
-}
+}*/
 

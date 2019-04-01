@@ -45,6 +45,7 @@ int main()
 		hipDeviceProp_t  deviceProp;
 		hipGetDeviceProperties(&deviceProp, device);
 		printf("Device %d has compute capability %d.%d.\n",device, deviceProp.major, deviceProp.minor);
+		printf("%d %d \n", HIP_VERSION_MAJOR,HIP_VERSION_MINOR );
 	}
 
 	testdevice();
