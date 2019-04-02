@@ -5,6 +5,6 @@ hipcc -fPIC -c add.hip.cpp -o add.o
 hipcc -shared add.o -o libadd.so
 
 hipcc -c main.cpp -o main.o
-hipcc main.o  -L. -ladd -o Mainadd
+mpicc  -L. -ladd main.o  -o Mainadd
 ./Mainadd
 

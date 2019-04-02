@@ -1,0 +1,1 @@
+hipcc -DHIP -DPROJECTOR_NO_TEXTURES  main.cpp

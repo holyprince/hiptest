@@ -1,7 +1,8 @@
 #ifndef ACC_PROJECTORKERNELIMPL_H_
 #define ACC_PROJECTORKERNELIMPL_H_
 #define XFLOAT float
-
+#include <iostream>
+#include <complex>
 #ifndef PROJECTOR_NO_TEXTURES
 #define PROJECTOR_PTR_TYPE hipTextureObject_t
 #else

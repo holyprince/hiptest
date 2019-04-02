@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "hip/hip_runtime.h"
 #include "add.h"
 
 
@@ -18,9 +17,11 @@
 
 int main() {
   
-  hipLaunchKernel(vectoradd_float, 
-                  dim3(WIDTH/THREADS_PER_BLOCK_X, HEIGHT/THREADS_PER_BLOCK_Y),
-                  THREADS_PER_BLOCK_X,0, 0);
+
+	  vectoradd_float(1, 1);
+  //hipLaunchKernel(vectoradd_float, 
+  //                dim3(WIDTH/THREADS_PER_BLOCK_X, HEIGHT/THREADS_PER_BLOCK_Y),
+  //                THREADS_PER_BLOCK_X,0, 0);
 
   return 0;
 }

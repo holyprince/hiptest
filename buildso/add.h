@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include "hip/hip_runtime.h"
 
-__global__ void vectoradd_float(hipLaunchParm lp);
+//__global__ void vectoradd_float(hipLaunchParm lp);
+
+void vectoradd_float(int blocks, int threads);
 
 #endif
