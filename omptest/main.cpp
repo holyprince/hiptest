@@ -17,7 +17,7 @@ void OpenMPTest()
         value1 += 1.0 / index;
 
     memset(result , 0, sizeof(double) * 2);
-
+    omp_get_num_threads();
 #pragma omp parallel for
     for(index = 0; index < 2; index++)
         result[index] = result[index];

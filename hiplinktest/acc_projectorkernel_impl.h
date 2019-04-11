@@ -3,6 +3,7 @@
 #define XFLOAT float
 #include <iostream>
 #include <complex>
+//#include "acc_projector.h"
 #ifndef PROJECTOR_NO_TEXTURES
 #define PROJECTOR_PTR_TYPE hipTextureObject_t
 #else
