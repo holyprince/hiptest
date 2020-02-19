@@ -12,3 +12,7 @@ for 2d fft , the part is needed:
     void* fbuffer = NULL;
     hipMalloc(&fbuffer, fbuffersize);
     rocfft_execution_info_set_work_buffer(forwardinfo, fbuffer, fbuffersize);
+
+
+rocFFT link  
+https://github.com/ROCmSoftwarePlatform/rocFFT
