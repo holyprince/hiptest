@@ -15,4 +15,8 @@ for 2d fft , the part is needed:
 
 
 rocFFT link  
-https://github.com/ROCmSoftwarePlatform/rocFFT
+https://github.com/ROCmSoftwarePlatform/rocFFT  
+
+2dstride.cpp : set stride and distance similar with cufft  
+https://blog.csdn.net/wzh1026/article/details/100641403
+
