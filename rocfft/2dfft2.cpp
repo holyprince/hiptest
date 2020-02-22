@@ -62,7 +62,7 @@ float testmoduleGPU(int dimx,int dimy) {
 	hipEvent_t stop1;
 	hipEventCreate(&stop1);
 	hipEventRecord(start1, NULL);
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < 1; i++) {
     rocfft_execute(plan,(void**) &d_inputData, (void**)&d_outData, forwardinfo);
 
 	}
@@ -73,7 +73,9 @@ float testmoduleGPU(int dimx,int dimy) {
 	hipEventElapsedTime(&msecTotal1, start1, stop1);
 	hipMemcpy(output, d_outData, LENGTH * sizeof(float2), hipMemcpyDeviceToHost);
 
-
+	for (int i = 0; i < N[0]*N[1]; i++) {
+		printf("%f %f \n", output[i].x, output[i].y);
+	}
     // Destroy plan
     rocfft_plan_destroy(plan);
 
@@ -92,8 +94,8 @@ int main() {
 	//for(pownum=7;pownum<=13;pownum++)
 	{
 		double avertime = 0;
-		for (int i = 0; i < 100; i++) {
-			timeres[i] = testmoduleGPU(800,800);
+		for (int i = 0; i < 1; i++) {
+			timeres[i] = testmoduleGPU(10,5);
 			printf("ITER %f \n", timeres[i]);
 			avertime += timeres[i];
 		}
