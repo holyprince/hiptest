@@ -20,3 +20,10 @@ https://github.com/ROCmSoftwarePlatform/rocFFT
 2dstride.cpp : set stride and distance similar with cufft  
 https://blog.csdn.net/wzh1026/article/details/100641403
 
+
+error: cannot take the address of an rvalue of type 'float2 *' (aka 'HIP_vector_type<float, 2> *')
+[float2.cpp]
+
+[multigpufft.cpp]
+对于大尺度FFT来说 memcpy之后的同步很重要
+
