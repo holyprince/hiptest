@@ -27,3 +27,5 @@ error: cannot take the address of an rvalue of type 'float2 *' (aka 'HIP_vector_
 [multigpufft.cpp]
 对于大尺度FFT来说 memcpy之后的同步很重要
 
+[twogpudirectlink.cpp]
+使用gpudirect需要预先设置enable，第一个版本，单节点两个GPU卡stride方法

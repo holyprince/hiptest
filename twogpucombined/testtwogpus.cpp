@@ -119,7 +119,7 @@ int main()
         float2 *d_in ;
         hipMalloc((void**) & (d_in), sizeof(float2) * NX*NY*NZ);
         hipMemcpy(d_in, f, NX*NY*NZ * sizeof(float2), hipMemcpyHostToDevice);
-		hipDeviceSynchronize();
+		hipDeviceSynchronize(); //this is important part 
 	
 		// Create rocFFT plan
 
